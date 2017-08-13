@@ -1,0 +1,298 @@
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+body {
+  /*font-family: 'Roboto Mono', monospace;*/
+  color: SlateGray ;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h1,h2,h3,h4,h5,span {
+  display: block;
+}
+
+
+.button {
+  width: 100%;
+  background-color: darkgrey;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;
+}
+
+/*reuseable stlyes*/
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.description {
+  display: flex;
+}
+.description span {
+  margin-top: 8px;
+  margin-left: 16px;
+}
+.description span:first-child {
+  font-weight: bold;
+}
+
+/*************** Header ***************/
+
+header {
+  z-index: 1;
+  width: 100%;
+  height: 64px;
+  border-bottom: ;
+  background-color: white;
+  overflow: hidden; /*so the nav spans will hide instead of appearing below the header*/
+}
+
+.logo {
+  font-size: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 100%; /*so it fills up*/
+  padding-left: 24px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+header nav span {
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+
+/*************** Jumbotron ***************/
+.jumbotron {
+  background-color: AliceBlue;
+  align-content: flex-start;
+  padding: 32px 0;
+}
+.banner {
+  max-width: 60%;/*change size depending on view. This needs to be 100% when on mobile*/
+  margin-left: 24px;
+}
+.banner img{
+  width: 100%; /*to fill the banner with the image*/
+}
+.banner-card {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 30%;
+  margin-left: 24px;
+}
+.banner-card.text-content {
+  height: 100%;
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  align-items: space-between;
+}
+h1, h2,h3,h4 p {
+  display: block;
+}
+
+
+
+/*************** information section ***************/
+#information {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 32px 0;
+}
+
+/*hide on small*/
+#information-main {
+  max-width: 60%;
+  margin-left: 24px;
+  margin-top: 32px;
+}
+#information-main img {
+  width: 100%;
+  height: auto;
+}
+.information-main {
+  margin: 32px auto;
+}
+.information-main p {
+  margin-top: 24px;
+}
+
+#information-subs{
+  display: flex;
+  justify-content: center;
+  margin-left: 8px;
+  max-width: 40%;
+}
+.info-sub {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 4s linear 1ms;
+}
+.info-sub:hover {
+  background-color: lightgrey;
+}
+.info-img {
+  width: 35%;
+}
+.info-img img {
+  width:100%;
+  height: auto;
+}
+.content{
+
+  width: 65%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+}
+.content p,
+.content h3,
+.content a {
+  margin-top: 8px;
+  margin-left: 16px;
+}
+.content a {
+  color:  #0047ab;
+}
+
+
+
+/*************** courses ***************/
+#courses {
+  background-color: lightgrey;
+}
+.topic {
+  margin: 32px 0px;
+  width: 100%;
+  text-align: center;
+}
+.courses {
+  margin: 0 64px 16px 64px;/*used 16px less than spec sheet because the margin of the cards*/
+  justify-content: center;
+}
+.course-card {
+  width: 250px;
+  margin: 16px;
+  background-color: white;
+}
+.course-img {
+
+}
+.course-img img {
+  width:100%;
+  height: auto;
+}
+.course-card >.description {
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+
+
+/*************** porfolio ***************/
+#theses-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+#theses {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 32px 0;
+}
+#thesis-main {
+  max-width: 60%;
+  margin-left: 24px;
+
+}
+
+.thesis {
+  margin-left: 24px;
+}
+.thesis-video {
+  max-width: 60%;
+}
+#thesis-subs {
+  display: flex;
+  justify-content: center;
+  max-width: 40%;
+}
+.thesis-card {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 4s linear 1ms;
+}
+.thesis-card:hover{
+  background-color: lightgrey;
+}
+.thesis-img {
+  width: 35%;
+}
+
+.thesis-card>.description {
+  width: 65%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+video, img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/**************footer ********************/
+footer {
+  margin: 0px 24px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  padding: 16px 0;
+
+}
