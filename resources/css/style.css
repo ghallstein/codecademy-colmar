@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
 html {
   font-size: 16px;
   line-height: 1.6;
 }
 body {
-  /*font-family: 'Roboto Mono', monospace;*/
+  font-family: 'Roboto Condensed', sans-serif;
   color: SlateGray ;
   margin: 0;
   padding: 0;
@@ -47,16 +48,7 @@ h1,h2,h3,h4,h5,span {
   display: flex;
   flex-wrap: wrap;
 }
-.description {
-  display: flex;
-}
-.description span {
-  margin-top: 8px;
-  margin-left: 16px;
-}
-.description span:first-child {
-  font-weight: bold;
-}
+
 
 /*************** Header ***************/
 
@@ -78,6 +70,7 @@ header {
 
 header img {
   height: 100%; /*so it fills up*/
+  width: 3rem;
   padding-left: 24px;
 }
 
@@ -127,76 +120,93 @@ h1, h2,h3,h4 p {
 
 
 
-/*************** information section ***************/
-#information {
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  padding: 32px 0;
-}
-
-/*hide on small*/
-#information-main {
-  max-width: 60%;
-  margin-left: 24px;
-  margin-top: 32px;
-}
-#information-main img {
+/*************** General styling for sections ***************/
+video, img {
   width: 100%;
   height: auto;
 }
-.information-main {
-  margin: 32px auto;
-}
-.information-main p {
-  margin-top: 24px;
-}
 
-#information-subs{
-  display: flex;
-  justify-content: center;
-  margin-left: 8px;
-  max-width: 40%;
+.whole-section {
+  padding-bottom: 32px;
 }
-.info-sub {
-  padding: 16px;
+.title-section {
   width: 100%;
+  text-align: center;
+  padding: 32px 0 ;
+  font-size: 2rem;
+
+}
+.left-section {
+  width: 60%;
+  margin-top: 32px;
+}
+.right-section {
+  width: 40%;
+  margin-top: 16px; /*16 + 16padding from cards = 32 to line up with left pic*/
+}
+.bigpic-section {
+  margin: 0 24px;
   display: flex;
-  align-items: center;
-  transition: color 4s linear 1ms;
 }
-.info-sub:hover {
-  background-color: lightgrey;
-}
-.info-img {
-  width: 35%;
-}
-.info-img img {
+.img-large {
   width:100%;
   height: auto;
 }
-.content{
-
-  width: 65%;
-  padding: 0px;
-  margin: 0px;
+.card-section {
+  flex-wrap: nowrap;/*so the description section wont drop below the picture*/
+  width: 100%;
+  max-height: 33%;
+  padding: 16px;
+  align-items: center;
+  border-left: 1px solid lightgrey;
+}
+.card-section > .description {
+  max-width: 65%;
+}
+.card-section:hover {
+  background-color: lightgrey;
+}
+.img-small {
+  width: 35%;
+  height: auto;
+}
+.description {
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: baseline;
-
 }
-.content p,
-.content h3,
-.content a {
+.description span {
   margin-top: 8px;
+  display: block;
+}
+.description a {
+  color: #0136BB;
+}
+.description span:first-child {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.card-section > .description span {
   margin-left: 16px;
 }
-.content a {
-  color:  #0047ab;
+.bigpic-section > .description span:first-child{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+.bigpic-section > .description span:last-child{
+  margin-top: 32px;
+}
+.bigpic-section > .description {
+  height: 100%;
 }
 
 
+/*****************************************************************************/
 
 /*************** courses ***************/
+
 #courses {
   background-color: lightgrey;
 }
@@ -208,19 +218,20 @@ h1, h2,h3,h4 p {
 .courses {
   margin: 0 64px 16px 64px;/*used 16px less than spec sheet because the margin of the cards*/
   justify-content: center;
+  max-width: 1200px; /*to keep a min of 2 cards at bottom*/
 }
 .course-card {
   width: 250px;
   margin: 16px;
   background-color: white;
 }
+.course-card >.description {
+  margin: 8px 0 24px 16px;
+}
 .course-img {
 
 }
-.course-img img {
-  width:100%;
-  height: auto;
-}
+
 .course-card >.description {
   flex-direction: column;
   margin-bottom: 24px;
@@ -228,61 +239,11 @@ h1, h2,h3,h4 p {
 
 
 
-/*************** porfolio ***************/
-#theses-section {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-#theses {
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  padding: 32px 0;
-}
-#thesis-main {
-  max-width: 60%;
-  margin-left: 24px;
-
-}
-
-.thesis {
-  margin-left: 24px;
-}
-.thesis-video {
-  max-width: 60%;
-}
-#thesis-subs {
-  display: flex;
-  justify-content: center;
-  max-width: 40%;
-}
-.thesis-card {
-  padding: 16px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  transition: color 4s linear 1ms;
-}
-.thesis-card:hover{
-  background-color: lightgrey;
-}
-.thesis-img {
-  width: 35%;
-}
-
-.thesis-card>.description {
-  width: 65%;
-  padding: 0px;
-  margin: 0px;
-  display: flex;
+/*************** thesis ***************/
+#thesis >.right-section {
   flex-direction: column;
-  align-items: baseline;
-}
-
-video, img {
-  width: 100%;
-  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 
