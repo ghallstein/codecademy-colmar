@@ -14,6 +14,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 h1 {
   font-size: 2rem;
 }
@@ -28,13 +29,20 @@ h1,h2,h3,h4,h5,span {
 }
 
 
-.button {
+button {
   width: 100%;
   background-color: darkgrey;
   text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
   color: white;
+  border: none;
+  margin-top: 1.5rem;
+}
+button a {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 /*reuseable stlyes*/
@@ -54,35 +62,72 @@ h1,h2,h3,h4,h5,span {
 
 header {
   z-index: 1;
-  width: 100%;
   height: 64px;
   border-bottom: ;
   background-color: white;
   overflow: hidden; /*so the nav spans will hide instead of appearing below the header*/
+  flex-wrap: nowrap;
 }
-
+header a {
+  color: inherit;
+}
 .logo {
-  font-size: 1.5rem;
-  flex-grow: 1;
+
+}
+
+h1, h2,h3,h4 p {
+  display: block;
+}
+
+nav {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+nav div {
   display: flex;
   align-items: center;
 }
-
-header img {
-  height: 100%; /*so it fills up*/
-  width: 3rem;
-  padding-left: 24px;
-}
-
-header nav {
+nav ul {
   display: flex;
   align-items: center;
-  padding-right: 1.5rem;
+  justify-content: space-between;
+  list-style: none;
+  align-content: center;
 }
 
-header nav span {
-  display: inline-block;
-  padding-left: 1rem;
+nav img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+ul li {
+  display: inline;
+  padding: 0 .5rem;
+}
+li {
+  padding-left: 2rem;
+}
+
+.mobile-nav {
+  display: none;
+}
+@media only screen and (max-width: 525px){
+  nav ul {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 480px){
+  .logo span{
+    display: none;
+  }
 }
 
 
@@ -91,6 +136,7 @@ header nav span {
   background-color: AliceBlue;
   align-content: flex-start;
   padding: 32px 0;
+  justify-content: center;
 }
 .banner {
   max-width: 60%;/*change size depending on view. This needs to be 100% when on mobile*/
@@ -104,7 +150,7 @@ header nav span {
   align-content: center;
   justify-content: center;
   align-items: center;
-  max-width: 30%;
+  width: 30%;
   margin-left: 24px;
 }
 .banner-card.text-content {
@@ -114,8 +160,22 @@ header nav span {
   justify-content: center;
   align-items: space-between;
 }
-h1, h2,h3,h4 p {
-  display: block;
+@media only screen and (max-width: 525px){
+  .jumbotron {
+    padding: 0;
+
+  }
+  .banner {
+    min-width:100%;
+    margin:0;
+    height: auto;
+  }
+  .banner-card {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 
@@ -133,7 +193,7 @@ video, img {
   width: 100%;
   text-align: center;
   padding: 32px 0 ;
-  font-size: 2rem;
+  font-size: 3rem;
 
 }
 .left-section {
@@ -162,10 +222,9 @@ video, img {
 }
 .card-section > .description {
   max-width: 65%;
+  margin-right: 16px;
 }
-.card-section:hover {
-  background-color: lightgrey;
-}
+
 .img-small {
   width: 35%;
   height: auto;
@@ -180,9 +239,7 @@ video, img {
   margin-top: 8px;
   display: block;
 }
-.description a {
-  color: #0136BB;
-}
+
 .description span:first-child {
   font-weight: bold;
   font-size: 1.5rem;
@@ -201,7 +258,67 @@ video, img {
 .bigpic-section > .description {
   height: 100%;
 }
+@media only screen and (max-width:768px){
+  .whole-section{
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-section{
+    width: 100%;
+  }
+  .right-section{
+    width: 100%;
+  }
+  .card-section{
+    border: none;
+  }
+}
 
+/*information*/
+#information{
+
+}
+#information a{
+  color: #0136BB;
+}
+#information>.right-section>.card-section:last-child{
+  background-color: lightgrey;
+}
+.mobile-img{
+  display: none;
+}
+
+@media only screen and (max-width: 525px){
+  #information >.left-section {
+    display: none;
+  }
+  #information >.right-section {
+    min-width: 100%;
+  }
+  #information >.img-small {
+    min-width: 100%;
+    margin:0;
+    height: auto;
+  }
+ .img-small img:first-child{
+   display: none;
+ }
+  .img-small {
+    width: auto;
+    height: 100%;
+  }
+  .mobile-img{
+    display:flex;
+  }
+  .card-section > .description {
+    min-width: 100%;
+  }
+  .card-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+  }
+}
 
 /*****************************************************************************/
 
@@ -236,7 +353,27 @@ video, img {
   flex-direction: column;
   margin-bottom: 24px;
 }
+@media only screen and (max-width: 525px){
+  #courses>.courses>.course-card>.course-img {
+    display: none;
+  }
+  #courses>.courses>.course-card{
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  #courses>.courses>.course-card>.description span:nth-child(1n+2){
+    display: none;
+  }
+  #courses>.courses>.course-card>.description{
+    margin: 16px 16px 24px 16px;
+  }
+  .course-card{
 
+  }
+}
 
 
 /*************** thesis ***************/
@@ -244,6 +381,26 @@ video, img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+#thesis>.right-section>.card-section:first-child{
+  background-color: lightgrey;
+}
+@media only screen and (max-width: 525px){
+  #thesis >.right-section {
+    display: none;
+  }
+  #thesis >.left-section {
+    min-width: 100%;
+    margin: 0;
+  }
+  #thesis>.left-section > .bigpic-section {
+    min-width: 100%;
+    margin:0;
+    height: auto;
+  }
+  #thesis>.left-section>.bigpic-section>.description {
+    display: none;
+  }
 }
 
 
@@ -256,4 +413,12 @@ footer {
   border-top: 1px solid lightgrey;
   padding: 16px 0;
 
+}
+@media only screen and (max-width: 525px){
+  footer span:last-child{
+    display: none;
+  }
+  footer {
+    border: none;
+  }
 }
