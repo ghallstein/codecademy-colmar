@@ -2,8 +2,8 @@
 /*color palate
 #EBEFF4 offwhite - secondary background color pairs well with white background and colors below
 #939797 Grey general text
-#7EC3CC light blue - header text to grab attention
-#66B8C5 blue
+#7EC3CC light blue -button background
+#66B8C5 blue - header
 #E19D94 Pink a for pop
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
@@ -21,6 +21,7 @@ body {
 strong {
   font-weight: bold;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -29,34 +30,39 @@ a {
 h1 {
   font-size: 2rem;
 }
+
 h2 {
   font-size: 1.5rem;
 }
+
 h3 {
   font-size: 1.25rem;
 }
+
 h1,h2,h3,h4,h5,span {
   display: block;
 }
 
-
 button {
   width: 100%;
-  background-color: #7EC3CC;
+  background-color: #7EC3CC;/*see palette*/
   text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
-  color: white;/*see palate notes*/
+  color: white;/*see palette*/
   border: none;
   margin-top: 1.5rem;
 }
+
 button a {
   color: white;/*see palette notes*/
   font-weight: bold;
   font-size: 1.25rem;
 }
 
-/*reuseable stlyes*/
+h1, h2,h3,h4 p {
+  display: block;
+}
 
 .flex-container {
   display: flex;
@@ -67,10 +73,6 @@ button a {
   display: flex;
   flex-wrap: wrap;
 }
-h1, h2,h3,h4 p {
-  display: block;
-}
-
 
 /*************** Header ***************/
 
@@ -82,9 +84,11 @@ header {
   overflow: hidden; /*so the nav spans will hide instead of appearing below the header*/
   flex-wrap: nowrap;
 }
+
 header a {
   color: inherit;
 }
+
 .logo {
   font-size: 1.5rem;
 }
@@ -96,10 +100,12 @@ nav {
   justify-content: space-between;
   width: 100%;
 }
+
 nav div {
   display: flex;
   align-items: center;
 }
+
 nav ul {
   display: flex;
   align-items: center;
@@ -146,11 +152,9 @@ li {
   }
 }
 
-
 /*************** Jumbotron ***************/
 .jumbotron {
   background-color: #EBEFF4;/*see palette*/
-
 }
 
 .banner-card {
@@ -161,7 +165,6 @@ li {
   padding: 16px;
   height: 100%;
 }
-
 
 @media only screen and (max-width: 525px){
   #jumbotron {
@@ -184,8 +187,6 @@ li {
     margin-bottom: 2rem;
   }
 }
-
-
 
 /*********** General styling for sections ********/
 video, img {
@@ -224,26 +225,32 @@ video, img {
 .card-section {
   flex-wrap: nowrap;/*so the description section wont drop below the picture*/
   width: 100%;
-  max-height: 33%;
   padding: 16px;
   align-items: center;
   border-left: 1px solid #EBEFF4;/*see palette*/
 }
+
 .card-section > .description {
   max-width: 65%;
   margin-right: 16px;
+}
+
+.card-section > .description span {
+  margin-left: 16px;
 }
 
 .img-small {
   width: 35%;
   height: auto;
 }
+
 .description {
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: baseline;
 }
+
 .description span {
   margin-top: 8px;
   display: block;
@@ -252,22 +259,24 @@ video, img {
 .description span:first-child {
   font-weight: bold;
   font-size: 1.5rem;
-  color: #7EC3CC;/*see palette*/
+  color: #66B8C5;/*see palette*/
 }
-.card-section > .description span {
-  margin-left: 16px;
-}
+
+
 .bigpic-section > .description span:first-child{
   margin-top: 16px;
   margin-bottom: 16px;
   font-size: 2rem;
 }
+
 .bigpic-section > .description span:last-child{
   margin-top: 32px;
 }
+
 .bigpic-section > .description {
   height: 100%;
 }
+
 @media only screen and (max-width:768px){
   .whole-section{
     flex-direction: column;
@@ -288,12 +297,15 @@ video, img {
 #information{
 
 }
+
 #information a{
   color: #E19D94;/*see palette*/
 }
+
 #information>.right-section>.card-section:last-child{
   background-color: #EBEFF4;/*see palette*/
 }
+
 .mobile-img{
   display: none;
 }
@@ -309,6 +321,9 @@ video, img {
     min-width: 100%;
     margin:0;
     height: auto;
+  }
+  #information>.right-section>.card-section:last-child{
+    background-color: inherit;/*remove*/
   }
  .img-small img:first-child{
    display: none;
@@ -330,32 +345,34 @@ video, img {
   }
 }
 
-/*****************************************************************************/
-
 /*************** courses ***************/
 
 #courses {
   background-color: #EBEFF4;
-
 }
+
 .topic {
   margin: 32px 0px;
   width: 100%;
   text-align: center;
 }
+
 .courses {
   margin: 0 64px 16px 64px;/*used 16px less than spec sheet because the margin of the cards*/
   justify-content: center;
   max-width: 1200px; /*to keep a min of 2 cards at bottom*/
 }
+
 .course-card {
   width: 250px;
   margin: 16px;
   background-color: white;
 }
+
 .course-card >.description {
   margin: 8px 0 24px 16px;
 }
+
 .course-img {
 
 }
@@ -364,6 +381,7 @@ video, img {
   flex-direction: column;
   margin-bottom: 24px;
 }
+
 @media only screen and (max-width: 525px){
   #courses>.courses>.course-card>.course-img {
     display: none;
@@ -391,14 +409,17 @@ video, img {
 #thesis >.left-section {
   opacity: .80;/*so the black in video blends better with page*/
 }
+
 #thesis >.right-section {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 #thesis>.right-section>.card-section:first-child{
   background-color: #EBEFF4;
 }
+
 @media only screen and (max-width: 525px){
   #thesis >.right-section {
     display: none;
@@ -417,8 +438,6 @@ video, img {
   }
 }
 
-
-
 /**************footer ********************/
 footer {
   margin: 0px 24px;
@@ -426,8 +445,8 @@ footer {
   justify-content: space-between;
   border-top: 1px solid lightgrey;
   padding: 16px 0;
-
 }
+
 @media only screen and (max-width: 525px){
   footer span:last-child{
     display: none;
