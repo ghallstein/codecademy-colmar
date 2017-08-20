@@ -1,3 +1,11 @@
+
+/*color palate
+#EBEFF4 offwhite - secondary background color pairs well with white background and colors below
+#939797 Grey general text
+#7EC3CC light blue - header text to grab attention
+#66B8C5 blue
+#E19D94 Pink a for pop
+*/
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
 html {
   font-size: 16px;
@@ -5,11 +13,14 @@ html {
 }
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  color: SlateGray ;
+  color: #939797;/*see palette*/
   margin: 0;
   padding: 0;
 }
 
+strong {
+  font-weight: bold;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -31,16 +42,16 @@ h1,h2,h3,h4,h5,span {
 
 button {
   width: 100%;
-  background-color: darkgrey;
+  background-color: #7EC3CC;
   text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
-  color: white;
+  color: white;/*see palate notes*/
   border: none;
   margin-top: 1.5rem;
 }
 button a {
-  color: white;
+  color: white;/*see palette notes*/
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -56,6 +67,9 @@ button a {
   display: flex;
   flex-wrap: wrap;
 }
+h1, h2,h3,h4 p {
+  display: block;
+}
 
 
 /*************** Header ***************/
@@ -63,8 +77,8 @@ button a {
 header {
   z-index: 1;
   height: 64px;
-  border-bottom: ;
-  background-color: white;
+  color: #66B8C5;
+  background-color: white;/*see palate notes*/
   overflow: hidden; /*so the nav spans will hide instead of appearing below the header*/
   flex-wrap: nowrap;
 }
@@ -72,11 +86,7 @@ header a {
   color: inherit;
 }
 .logo {
-
-}
-
-h1, h2,h3,h4 p {
-  display: block;
+  font-size: 1.5rem;
 }
 
 nav {
@@ -104,10 +114,12 @@ nav img {
   margin-right: 1rem;
   margin-left: 1rem;
 }
+
 ul li {
   display: inline;
   padding: 0 .5rem;
 }
+
 li {
   padding-left: 2rem;
 }
@@ -115,6 +127,8 @@ li {
 .mobile-nav {
   display: none;
 }
+
+/*to replace text nav with icon mobile nav*/
 @media only screen and (max-width: 525px){
   nav ul {
     display: none;
@@ -124,6 +138,8 @@ li {
     text-align: center;
   }
 }
+
+/*to remove the logo text once screen is too small to fit*/
 @media only screen and (max-width: 480px){
   .logo span{
     display: none;
@@ -133,44 +149,35 @@ li {
 
 /*************** Jumbotron ***************/
 .jumbotron {
-  background-color: AliceBlue;
-  align-content: flex-start;
-  padding: 32px 0;
-  justify-content: center;
+  background-color: #EBEFF4;/*see palette*/
+
 }
-.banner {
-  max-width: 60%;/*change size depending on view. This needs to be 100% when on mobile*/
-  margin-left: 24px;
-}
-.banner img{
-  width: 100%; /*to fill the banner with the image*/
-}
+
 .banner-card {
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  margin-left: 24px;
-}
-.banner-card.text-content {
+  padding: 16px;
   height: 100%;
-  display: flex;
-  align-content: space-between;
-  justify-content: center;
-  align-items: space-between;
 }
-@media only screen and (max-width: 525px){
-  .jumbotron {
-    padding: 0;
 
+
+@media only screen and (max-width: 525px){
+  #jumbotron {
+    padding: 0;
+    margin: 0;
   }
-  .banner {
+  #jumbotron >.left-section {
     min-width:100%;
+    margin:0;
+  }
+  #jumbotron>.left-section > .bigpic-section {
+    min-width: 100%;
     margin:0;
     height: auto;
   }
-  .banner-card {
+  #jumbotron > .right-section {
     width: 100%;
     margin-top: 2rem;
     margin-left: 1rem;
@@ -180,7 +187,7 @@ li {
 
 
 
-/*************** General styling for sections ***************/
+/*********** General styling for sections ********/
 video, img {
   width: 100%;
   height: auto;
@@ -189,17 +196,19 @@ video, img {
 .whole-section {
   padding-bottom: 32px;
 }
+
 .title-section {
   width: 100%;
   text-align: center;
   padding: 32px 0 ;
   font-size: 3rem;
-
 }
+
 .left-section {
   width: 60%;
   margin-top: 32px;
 }
+
 .right-section {
   width: 40%;
   margin-top: 16px; /*16 + 16padding from cards = 32 to line up with left pic*/
@@ -218,7 +227,7 @@ video, img {
   max-height: 33%;
   padding: 16px;
   align-items: center;
-  border-left: 1px solid lightgrey;
+  border-left: 1px solid #EBEFF4;/*see palette*/
 }
 .card-section > .description {
   max-width: 65%;
@@ -243,6 +252,7 @@ video, img {
 .description span:first-child {
   font-weight: bold;
   font-size: 1.5rem;
+  color: #7EC3CC;/*see palette*/
 }
 .card-section > .description span {
   margin-left: 16px;
@@ -279,10 +289,10 @@ video, img {
 
 }
 #information a{
-  color: #0136BB;
+  color: #E19D94;/*see palette*/
 }
 #information>.right-section>.card-section:last-child{
-  background-color: lightgrey;
+  background-color: #EBEFF4;/*see palette*/
 }
 .mobile-img{
   display: none;
@@ -325,7 +335,8 @@ video, img {
 /*************** courses ***************/
 
 #courses {
-  background-color: lightgrey;
+  background-color: #EBEFF4;
+
 }
 .topic {
   margin: 32px 0px;
@@ -377,13 +388,16 @@ video, img {
 
 
 /*************** thesis ***************/
+#thesis >.left-section {
+  opacity: .80;/*so the black in video blends better with page*/
+}
 #thesis >.right-section {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 #thesis>.right-section>.card-section:first-child{
-  background-color: lightgrey;
+  background-color: #EBEFF4;
 }
 @media only screen and (max-width: 525px){
   #thesis >.right-section {
